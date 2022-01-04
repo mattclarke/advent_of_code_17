@@ -2,8 +2,8 @@
 https://adventofcode.com/2016
 
 ## Day 1
-- Part 1:
-- Part 2:
+- Part 1: looping but don't forget to check the last value.
+- Part 2: modulo to find the element halfway round.
 
 ## Day 2
 - Part 1:
