@@ -6,8 +6,8 @@ https://adventofcode.com/2016
 - Part 2: modulo to find the element halfway round.
 
 ## Day 2
-- Part 1:
-- Part 2:
+- Part 1: find the max and min for each row of data.
+- Part 2: for each value in a row, look for when modulo is zero with any other value in the row.
 
 ## Day 3
 - Part 1:
