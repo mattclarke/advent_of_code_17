@@ -42,5 +42,45 @@ assert solve(1024) == 31
 # Part 1 = 419
 print(f"answer = {solve(PUZZLE_INPUT)}")
 
-# Part 2 = 133
-# print(f"answer = {abs(position[0]) + abs(position[1])}")
+grid = {(0, 0): 1}
+pos = (0, 0)
+# East = 0, North = 1, etc.
+direction = 0
+value = 1
+
+while value <= PUZZLE_INPUT:
+    if direction == 0:
+        pos = (pos[0] + 1, pos[1])
+    elif direction == 1:
+        pos = (pos[0], pos[1] + 1)
+    elif direction == 2:
+        pos = (pos[0] - 1, pos[1])
+    elif direction == 3:
+        pos = (pos[0], pos[1] - 1)
+    else:
+        assert False
+
+    value = 0
+    for dy in [-1, 0, 1]:
+        for dx in [-1, 0, 1]:
+            dpos = (pos[0] + dx, pos[1] + dy)
+            value += grid.get(dpos, 0)
+    grid[pos] = value
+
+    if direction == 0:
+        if (pos[0], pos[1] + 1) not in grid:
+            direction = 1
+    elif direction == 1:
+        if (pos[0] - 1, pos[1]) not in grid:
+            direction = 2
+    elif direction == 2:
+        if (pos[0], pos[1] - 1) not in grid:
+            direction = 3
+    elif direction == 3:
+        if (pos[0] + 1, pos[1]) not in grid:
+            direction = 0
+    else:
+        assert False
+
+# Part 2 = 295229
+print(f"answer = {value}")

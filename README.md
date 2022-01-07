@@ -10,8 +10,8 @@ https://adventofcode.com/2016
 - Part 2: for each value in a row, look for when modulo is zero with any other value in the row.
 
 ## Day 3
-- Part 1:
-- Part 2:
+- Part 1: simple to brute force, but did it with maths for a bit of fun.
+- Part 2: brute force.
 
 ## Day 4
 - Part 1:
