@@ -14,8 +14,8 @@ https://adventofcode.com/2016
 - Part 2: brute force.
 
 ## Day 4
-- Part 1:
-- Part 2:
+- Part 1: put the list of words in a set and see if both are the same length.
+- Part 2: first sort the letters of each word and then create the set.
 
 ## Day 5
 - Part 1:
