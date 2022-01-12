@@ -22,8 +22,8 @@ https://adventofcode.com/2016
 - Part 2: similar but with decrement for >= 3. Takes ~10 secs with Python, < 1 second with PyPy.
 
 ## Day 6
-- Part 1:
-- Part 2:
+- Part 1: simple looping.
+- Part 2: essentially the same code with some extra book-keeping to keep track of the target.
 
 ## Day 7
 - Part 1:
