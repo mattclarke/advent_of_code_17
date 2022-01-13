@@ -26,8 +26,9 @@ https://adventofcode.com/2016
 - Part 2: essentially the same code with some extra book-keeping to keep track of the target.
 
 ## Day 7
-- Part 1:
-- Part 2:
+- Part 1: construct the graph and find the root. The root will be the node that doesn't appear in any other nodes list.
+- Part 2: recurse until we find a mismatch, calculate the difference and add it to the base node. Used an exception to
+terminate recursion :(
 
 ## Day 8
 - Part 1:
