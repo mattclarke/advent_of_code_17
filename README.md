@@ -31,8 +31,8 @@ https://adventofcode.com/2016
 terminate recursion :(
 
 ## Day 8
-- Part 1:
-- Part 2:
+- Part 1: parse the commands, run them and find the highest value in the registers.
+- Part 2: minor modification to max the updated register against the max so far.
 
 ## Day 9
 - Part 1:
