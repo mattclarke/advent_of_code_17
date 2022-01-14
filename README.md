@@ -35,8 +35,9 @@ terminate recursion :(
 - Part 2: minor modification to max the updated register against the max so far.
 
 ## Day 9
-- Part 1:
-- Part 2:
+- Part 1: move through the input and if it is a valid '{' increase the depth and on a valid '}' increase the score and
+decrease the depth.
+- Part 2: add a variable to count the garbage.
 
 ## Day 10
 - Part 1:
