@@ -40,8 +40,8 @@ decrease the depth.
 - Part 2: add a variable to count the garbage.
 
 ## Day 10
-- Part 1:
-- Part 2:
+- Part 1: copy the "selected" values, reverse them and then overwrite. A little % magic to handle going past the end.
+- Part 2: follow the recipe basically. I was getting a wrong answer because I forgot to strip the newline from the input.
 
 ## Day 11
 - Part 1:
