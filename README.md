@@ -47,6 +47,18 @@ decrease the depth.
 - Part 1: hexagons => going directly north or south is y += 2.
 - Part 2: to get the maximum calculate the total distance after each move. Takes a couple of seconds - it should be
 possible to only calculate the relative distance change, so that would be quicker.
+Massive speed up after looking at https://www.redblobgames.com/grids/hexagons/.
+If we define q as the distance along the SW to NE axis and r as the distance along the NW to SE axis then:
+```
+n => r -= 1
+s => r += 1
+ne => q += 1 and r -= 1
+se => q += 1
+sw => q -= 1 and r += 1
+nw => q -= 1
+```
+And the distance from the origin is just max(abs(q), abs(r)!
+
 
 ## Day 12:
 - Part 1:
