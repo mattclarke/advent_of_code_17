@@ -44,8 +44,9 @@ decrease the depth.
 - Part 2: follow the recipe basically. I was getting a wrong answer because I forgot to strip the newline from the input.
 
 ## Day 11
-- Part 1:
-- Part 2:
+- Part 1: hexagons => going directly north or south is y += 2.
+- Part 2: to get the maximum calculate the total distance after each move. Takes a couple of seconds - it should be
+possible to only calculate the relative distance change, so that would be quicker.
 
 ## Day 12:
 - Part 1:
