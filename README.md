@@ -61,8 +61,8 @@ And the distance from the origin is just max(abs(q), abs(r)!
 
 
 ## Day 12:
-- Part 1:
-- Part 2:
+- Part 1: pretty simple - BFS from '0' node and collect nodes seen in a set.
+- Part 2: start from each node that hasn't already been seen and repeat part 1 but starting from that node.
 
 ## Day 13:
 - Part 1:
