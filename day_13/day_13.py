@@ -15,31 +15,22 @@ INPUT = {}
 num_layers = 0
 
 for line in puzzle_input:
-    layer, rnge = line.split(": ")
-    INPUT[int(layer)] = int(rnge)
+    layer, depth = line.split(": ")
+    INPUT[int(layer)] = int(depth)
     num_layers = max(num_layers, int(layer))
 
 tick = 0
 severity = 0
 
-for x in range(num_layers+1):
+for x in range(num_layers + 1):
     if tick in INPUT:
-        rnge = INPUT[tick]
-        # TODO: should be able to do this with maths!
-        current = 0
-        inc = True
-        for i in range(tick):
-            if inc and current < rnge-1:
-                current += 1
-                if current == rnge -1:
-                    inc = False
-                    continue
-            if not inc and current > 0:
-                current -= 1
-                if current == 0:
-                    inc = True
+        depth = INPUT[tick]
+        current = tick % (depth * 2 - 2)
+        if current >= depth:
+            current -= depth - 1
+            current = depth - current
         if current == 0:
-            severity += tick * rnge
+            severity += tick * depth
     tick += 1
 
 
@@ -52,22 +43,13 @@ while True:
     tick = delay
     clean = True
 
-    for x in range(num_layers+1):
+    for x in range(num_layers + 1):
         if position in INPUT:
-            rnge = INPUT[position]
-            # TODO: should be able to do this with maths!
-            current = 0
-            inc = True
-            for i in range(tick):
-                if inc and current < rnge-1:
-                    current += 1
-                    if current == rnge -1:
-                        inc = False
-                        continue
-                if not inc and current > 0:
-                    current -= 1
-                    if current == 0:
-                        inc = True
+            depth = INPUT[position]
+            current = tick % (depth * 2 - 2)
+            if current >= depth:
+                current -= depth - 1
+                current = depth - current
             if current == 0:
                 clean = False
                 break
@@ -77,5 +59,5 @@ while True:
         break
     delay += 1
 
-# Part 2 = 133
+# Part 2 = 3878062
 print(f"answer = {delay}")

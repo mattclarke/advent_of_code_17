@@ -65,8 +65,8 @@ And the distance from the origin is just max(abs(q), abs(r)!
 - Part 2: start from each node that hasn't already been seen and repeat part 1 but starting from that node.
 
 ## Day 13:
-- Part 1:
-- Part 2:
+- Part 1: can be done by brute force by using a loop to work out where the sensor is for the current position.
+- Part 2: brute force looping would take a very long time, so it was necessary to use maths to find the sensor positions.
 
 ## Day 14:
 - Part 1:
