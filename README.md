@@ -69,8 +69,9 @@ And the distance from the origin is just max(abs(q), abs(r)!
 - Part 2: brute force looping would take a very long time, so it was necessary to use maths to find the sensor positions.
 
 ## Day 14:
-- Part 1:
-- Part 2:
+- Part 1: using knot hash algorithm from day 10, apply it for each row and count the number of ones.
+- Part 2: for each non-empty cell, use a BFS to work out which non-empty cells are connected to it. Store the connected
+cells  in a set, so anytime we find a non-empty cell we haven't seen before we know it is a new region.
 
 ## Day 15:
 - Part 1:
