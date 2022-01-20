@@ -74,8 +74,8 @@ And the distance from the origin is just max(abs(q), abs(r)!
 cells  in a set, so anytime we find a non-empty cell we haven't seen before we know it is a new region.
 
 ## Day 15:
-- Part 1:
-- Part 2:
+- Part 1: bitmasks FTW! Python takes ~40 seconds, PyPy < 1 second!
+- Part 2: slight modification.
 
 ## Day 16:
 - Part 1:
