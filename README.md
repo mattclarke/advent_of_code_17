@@ -78,8 +78,12 @@ cells  in a set, so anytime we find a non-empty cell we haven't seen before we k
 - Part 2: slight modification.
 
 ## Day 16:
-- Part 1:
-- Part 2:
+- Part 1: step through the instructions.
+- Part 2: 1,000,000,000 is a big number, so run the algorithm until we get the original data back as this gives us the
+"repeat interval". "big number" % "repeat interval" gives us the number of times we need to perform the algorithm to get
+the answer.
+
+Note: because of the "Partner" command swaps based on letter not index, I don't think we can short-cut the algorithm.
 
 ## Day 17:
 - Part 1:
