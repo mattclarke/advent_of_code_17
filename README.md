@@ -86,8 +86,9 @@ the answer.
 Note: because of the "Partner" command swaps based on letter not index, I don't think we can short-cut the algorithm.
 
 ## Day 17:
-- Part 1:
-- Part 2:
+- Part 1: construct a linked list and run the algorithm.
+- Part 2: big number! As we are only interested in the value after the zeroth entry, we only need to track the current
+index, the buffer size and the "first" value. When the index is zero we update the "first" value.
 
 ## Day 18:
 - Part 1:
