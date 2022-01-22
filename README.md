@@ -95,8 +95,8 @@ index, the buffer size and the "first" value. When the index is zero we update t
 - Part 2:
 
 ## Day 19:
-- Part 1:
-- Part 2:
+- Part 1: work out an algorith for following the path and accumulate the letters.
+- Part 2: add a variable to count the steps.
 
 ## Day 20:
 - Part 1:
