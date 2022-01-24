@@ -99,8 +99,9 @@ index, the buffer size and the "first" value. When the index is zero we update t
 - Part 2: add a variable to count the steps.
 
 ## Day 20:
-- Part 1:
-- Part 2:
+- Part 1: find the particle(s) with the lowest acceleration. Turned out to be only one!
+- Part 2: run the algorithm and handle the collisions; run until there are no more collisions.
+Would be nice to exit the loop based on logic but seems overkill for AoC.
 
 ## Day 21:
 - Part 1:
