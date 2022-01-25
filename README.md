@@ -104,8 +104,10 @@ index, the buffer size and the "first" value. When the index is zero we update t
 Would be nice to exit the loop based on logic but seems overkill for AoC.
 
 ## Day 21:
-- Part 1:
-- Part 2:
+- Part 1: put all the translations of an input into a dict, so we do all the rotating and flipping once at the beginning.
+Then it is just working through the algorithm, hopefully, without any indexing bugs...
+- Part 2: same as part 1 but run more iterations (takes ~5 seconds). I suspect if one doesn't do the rotations and
+flips upfront and instead does them for each "square" then it takes a very long time.
 
 ## Day 22:
 - Part 1:
