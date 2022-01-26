@@ -110,8 +110,8 @@ Then it is just working through the algorithm, hopefully, without any indexing b
 flips upfront and instead does them for each "square" then it takes a very long time.
 
 ## Day 22:
-- Part 1:
-- Part 2:
+- Part 1: cellular automata-ish. Using a set because the grid is infinite.
+- Part 2: handling more complex transitions so changed set to dict. Reasonably quick to run (~5 seconds in PyPy).
 
 ## Day 23:
 - Part 1:
