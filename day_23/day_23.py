@@ -57,5 +57,4 @@ registers = {"a": 0, "b": 0, "c": 0, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0}
 # Part 1 = 6724
 print(f"answer = {run_code(registers)}")
 
-# Part 2 =
-# print(f"answer = {abs(position[0]) + abs(position[1])}")
+# Part 2 = 903

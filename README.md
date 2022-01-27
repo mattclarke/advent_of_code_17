@@ -114,8 +114,8 @@ flips upfront and instead does them for each "square" then it takes a very long 
 - Part 2: handling more complex transitions so changed set to dict. Reasonably quick to run (~5 seconds in PyPy).
 
 ## Day 23:
-- Part 1:
-- Part 2:
+- Part 1: modified the ASM runner from day 18.
+- Part 2: see the explanation file in the directory.
 
 ## Day 24:
 - Part 1:
