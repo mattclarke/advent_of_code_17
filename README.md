@@ -118,8 +118,10 @@ flips upfront and instead does them for each "square" then it takes a very long 
 - Part 2: see the explanation file in the directory.
 
 ## Day 24:
-- Part 1:
-- Part 2:
+- Part 1: fill a dict of the connections (don't forget they can be used either way round!) and recurse.
+- Part 2: add global variables to track the longest and it's strength.
+
+Unexpectedly simple for day 24. Takes ~25 seconds with Python and ~4 seconds with PyPy.
 
 ## Day 25:
 - Part 1:
