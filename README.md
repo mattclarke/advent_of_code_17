@@ -124,5 +124,5 @@ flips upfront and instead does them for each "square" then it takes a very long 
 Unexpectedly simple for day 24. Takes ~25 seconds with Python and ~4 seconds with PyPy.
 
 ## Day 25:
-- Part 1:
-- Part 2:
+- Part 1: relatively simple algorithm to end the year.
+- Part 2: no part 2.
