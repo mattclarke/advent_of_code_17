@@ -15,12 +15,12 @@ with open("input.txt") as f:
 
 puzzle_input = [x.strip() for x in PUZZLE_INPUT.strip().split("\n")]
 
-played = []
 
-
-def snd(regs, x, played):
-    played.clear()
-    played.append(regs[x])
+def convert_arg(regs, value):
+    if value.isdigit() or value.startswith("-"):
+        return int(value)
+    else:
+        return regs[value]
 
 
 def set(regs, x, y):
@@ -39,12 +39,8 @@ def mod(regs, x, y):
     regs[x] %= y
 
 
-def rcv(regs, x, played):
-    return played[~0]
-
-
-def jgz(regs, sp, x, y):
-    if regs[x] > 0:
+def jgz(sp, x, y):
+    if x > 0:
         return sp + y, True
     return sp, False
 
@@ -52,15 +48,12 @@ def jgz(regs, sp, x, y):
 sp = 0
 registers = defaultdict(int)
 answer = -1
+played = None
 
 while sp < len(puzzle_input):
-    line = puzzle_input[sp]
-    cmd, *args = line.split(" ")
+    cmd, *args = puzzle_input[sp].split(" ")
     if len(args) == 2:
-        if args[1].isdigit() or args[1].startswith("-"):
-            args = (args[0], int(args[1]))
-        else:
-            args = (args[0], registers[args[1]])
+        args = (args[0], convert_arg(registers, args[1]))
 
     if cmd == "set":
         set(registers, args[0], args[1])
@@ -71,19 +64,77 @@ while sp < len(puzzle_input):
     elif cmd == "mod":
         mod(registers, args[0], args[1])
     elif cmd == "jgz":
-        sp, jump = jgz(registers, sp, args[0], args[1])
+        sp, jump = jgz(sp, convert_arg(registers, args[0]), args[1])
         if jump:
             continue
     elif cmd == "snd":
-        snd(registers, args[0], played)
+        played = registers[args[0]]
     elif cmd == "rcv":
         if registers[args[0]] != 0:
-            r = rcv(registers, args[0], played)
-            if r is not None:
-                answer = r
+            if played is not None:
+                answer = played
                 break
     sp += 1
 
 
 # Part 1 = 7071
 print(f"answer = {answer}")
+
+
+def run_until(registers, sp, write, read):
+    while sp < len(puzzle_input):
+        cmd, *args = puzzle_input[sp].split(" ")
+        if len(args) == 2:
+            args = (args[0], convert_arg(registers, args[1]))
+
+        if cmd == "set":
+            set(registers, args[0], args[1])
+        elif cmd == "add":
+            add(registers, args[0], args[1])
+        elif cmd == "mul":
+            mul(registers, args[0], args[1])
+        elif cmd == "mod":
+            mod(registers, args[0], args[1])
+        elif cmd == "jgz":
+            sp, jump = jgz(sp, convert_arg(registers, args[0]), args[1])
+            if jump:
+                continue
+        elif cmd == "snd":
+            write.append(registers[args[0]])
+        elif cmd == "rcv":
+            if not read:
+                return registers, sp, write, read
+            v = read.pop(0)
+            registers[args[0]] = v
+        sp += 1
+    assert False
+
+
+registers_a = defaultdict(int)
+registers_b = defaultdict(int)
+registers_b["p"] = 1
+queue_a = []
+queue_b = []
+sp_a = 0
+sp_b = 0
+is_a = True
+ans = 0
+
+a = (registers_a, sp_a, queue_a, queue_b)
+b = (registers_b, sp_b, queue_b, queue_a)
+
+while True:
+    if is_a:
+        a = run_until(*a)
+        is_a = False
+    else:
+        b = run_until(*b)
+        is_a = True
+        ans += len(queue_b)
+
+    if not queue_a and not queue_b:
+        break
+
+
+# Part 2 = 8001
+print(f"answer = {ans}")
