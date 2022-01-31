@@ -91,8 +91,9 @@ Note: because of the "Partner" command swaps based on letter not index, I don't 
 index, the buffer size and the "first" value. When the index is zero we update the "first" value.
 
 ## Day 18:
-- Part 1:
-- Part 2:
+- Part 1: implement instruction set and exit when "recv" receives a value.
+- Part 2: on "snd" command add to queue, on "recv" read from queue. Took me a while to realise there was `jgz 1 3`
+command and because I was using defaultdict "1" was a treated as a valid key rather than a value - d'oh!
 
 ## Day 19:
 - Part 1: work out an algorith for following the path and accumulate the letters.

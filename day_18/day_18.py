@@ -23,7 +23,7 @@ def convert_arg(regs, value):
         return regs[value]
 
 
-def set(regs, x, y):
+def set_reg(regs, x, y):
     regs[x] = y
 
 
@@ -56,7 +56,7 @@ while sp < len(puzzle_input):
         args = (args[0], convert_arg(registers, args[1]))
 
     if cmd == "set":
-        set(registers, args[0], args[1])
+        set_reg(registers, args[0], args[1])
     elif cmd == "add":
         add(registers, args[0], args[1])
     elif cmd == "mul":
@@ -88,7 +88,7 @@ def run_until(registers, sp, write, read):
             args = (args[0], convert_arg(registers, args[1]))
 
         if cmd == "set":
-            set(registers, args[0], args[1])
+            set_reg(registers, args[0], args[1])
         elif cmd == "add":
             add(registers, args[0], args[1])
         elif cmd == "mul":

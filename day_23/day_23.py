@@ -4,7 +4,14 @@ with open("input.txt") as f:
 puzzle_input = [x.strip() for x in PUZZLE_INPUT.strip().split("\n")]
 
 
-def sets(regs, x, y):
+def convert_arg(regs, value):
+    if value.isdigit() or value.startswith("-"):
+        return int(value)
+    else:
+        return regs[value]
+
+
+def set_reg(regs, x, y):
     regs[x] = y
 
 
@@ -27,24 +34,19 @@ def run_code(registers):
     num_mul = 0
 
     while sp < len(puzzle_input):
-        line = puzzle_input[sp]
-        cmd, *args = line.split(" ")
+        cmd, *args = puzzle_input[sp].split(" ")
         if len(args) == 2:
-            if args[1].isdigit() or args[1].startswith("-"):
-                args = (args[0], int(args[1]))
-            else:
-                args = (args[0], registers[args[1]])
+            args = (args[0], convert_arg(registers, args[1]))
 
         if cmd == "set":
-            sets(registers, args[0], args[1])
+            set_reg(registers, args[0], args[1])
         elif cmd == "sub":
             sub(registers, args[0], args[1])
         elif cmd == "mul":
             mul(registers, args[0], args[1])
             num_mul += 1
         elif cmd == "jnz":
-            arg0 = registers[args[0]] if args[0] in registers else int(args[0])
-            sp, jump = jnz(sp, arg0, args[1])
+            sp, jump = jnz(sp, convert_arg(registers, args[0]), args[1])
             if jump:
                 continue
         sp += 1
